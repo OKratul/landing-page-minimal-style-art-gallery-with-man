@@ -1,0 +1,199 @@
+.header{
+    display: flex;
+    justify-content: center;
+}
+.navbar-brand{
+    color: black;
+    font-size: 40px !important;
+}
+.nav-link{
+    color: #000;
+    font-size: 25px;
+    padding:20px !important ;
+}
+.read-more{
+    color: #000 !important;
+}
+.background{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 450px));
+    padding: 100px 100px 0px 100px;
+}
+.about{
+    grid-column: auto/ span 1;
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    padding: 50px;
+}
+.dp{
+position: relative;
+grid-column: auto / span 1;
+}
+.dp::before{
+    content: '';
+    position: absolute;
+    width:500px;
+    height: 500px;
+    top: -30px;
+    right: 0px;
+    border-radius: 50%;
+    background: rgb(230,186,56);
+    background: linear-gradient(180deg, rgba(230,186,56,1) 0%, rgba(115,22,1,0.7) 48%, rgba(160,23,23,0.7) 52%, rgba(230,186,56,1) 100%);
+    display: flex;
+    animation:anim 4s linear infinite;
+}
+@keyframes anim{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.dp-img{
+}
+.dp-img img{
+    width: 300px;
+    height: 600px;
+   margin-left: 70px;
+   position: relative;
+   z-index: 10;
+   display: flex;
+   animation: img 4s ease-in-out infinite;
+
+}
+.dp::after{
+    content: 'Less is More';
+    word-wrap: break-word;
+    position: absolute;
+    width: 40%;
+    text-align: left;
+    right: -48%;
+    bottom: 50%;
+    font-size: 40px;
+    font-weight: 800;
+    animation: less 2s ease-out 1;
+    font-family: 'Audiowide', cursive;
+}
+@keyframes less{
+    0%{
+        transform: translateX(-200px);
+    }
+}
+@keyframes img{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.social{
+    margin-top: 100px;
+}
+.social a{
+    color: #000;
+    word-spacing: 20px;
+    font-size: 35px !important;
+    text-decoration: none !important;
+}
+
+.social a:hover{
+    color: rgb(66, 66, 2);
+}
+
+@media (max-width:1130px){
+    .background{
+        padding: 0px 0px ;
+    }
+    .dp{
+        grid-column-start: 1/span 1 ;
+        grid-row-start:1 ;
+    }
+    .about{
+        grid-column-start:2/span 1 ;
+    }
+    .dp::before{
+        content: '';
+        display: none;
+    }
+    .dp::after{
+        content: 'Less is More';
+        word-wrap: break-word;
+        position: absolute;
+        width: 40%;
+        text-align: left;
+        left: -10%;
+        bottom: 25%;
+        font-size: 40px;
+        font-weight: 800;
+        animation: less 2s ease-out 1;
+        font-family: 'Audiowide', cursive;
+    }
+   .dp-img img{
+       width: 300px;
+       height: 600px;
+   }
+}
+@media (max-width:930px){
+    .header{
+        display: flex;
+        justify-content:center
+    }
+   
+    .background{
+        padding: 20px 50px !important;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        justify-content: start;
+        overflow: hidden;
+    }
+    .about{
+        padding: 30px 20px !important;
+    }
+    .social{
+        margin-top: 150px;
+    }
+}
+@media (max-width:830px){
+    .header{
+        display: flex;
+        justify-content:center
+    }
+   
+    .background{
+        padding: 20px 50px !important;
+        justify-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        overflow: hidden;
+    }
+    .dp{
+        overflow: unset;
+    }
+    .about{
+        padding: 30px 40px !important;
+        grid-row: 2/ auto;
+    }
+    .social{
+        margin-top: 150px;
+    }
+}
+
+@media (max-width:450px){
+    .dp-img img{
+        width: 200px;
+        height: 400px;
+    }
+    .dp::after{
+        font-size: 30px;
+    }
+    .about{
+        font-size: 18px;
+    }
+    .social{
+        margin-top: 50px;
+    }
+}
